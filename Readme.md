@@ -49,8 +49,8 @@ The last one controls the output format:
 - "--only-ok": only prints the functional attacks  
 - "--only-some": only prints the partly functional attacks  
 - "--only-fail": only prints the non-functional attacks  
-- "--no-ok": don't print the functional attacks  
-- "--no-fail": don't print the non-functional attacks  
+- "--not-ok": don't print the functional attacks  
+- "--not-fail": don't print the non-functional attacks  
 - "--only-summary": only prints the summary  
 - "--format-bash"(default): prints the summary in plain text  
 - "--format-latex": prints the summary as a latex table  

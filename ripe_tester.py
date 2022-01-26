@@ -62,9 +62,11 @@ else:
   repeat_times = int(sys.argv[2])
 
   if len(sys.argv) > 3:
-    if sys.argv[3] in ["gcc","clang"]:
+    if sys.argv[3] in compilers:
       compilers = [sys.argv[3]]
-    i = 4
+      i = 4
+    else:
+      i = 3
     while (i<len(sys.argv)):
       arg = sys.argv[i]
       if ("only" in arg or "not" in arg):
@@ -178,6 +180,8 @@ for compiler in compilers:
               i += 1
 
               os.system("rm /tmp/ripe_log")
+              if os.path.exists("/tmp/ripe-eval/f_xxxx"):
+                os.system("rm /tmp/ripe-eval/f_xxxx")
               parameters = (tech,loc,ptr,attack,func)
               parameters_str = "-t %8s -l %5s -c %18s -i %16s -f %8s" % parameters
               sys.stdout.write('... Running %s ...\r' % parameters_str)
